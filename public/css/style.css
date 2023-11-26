@@ -1,0 +1,265 @@
+/* 640px */
+/* 641px and 1007px */
+/* 1008px */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary: #2F2F2F;
+    --secondary: #00C896;
+    --text: #f1f1f1;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+/* navbar */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 20px 70px;
+    transition: 0.5s;
+    background: var(--primary);
+}
+
+#navbar h1 a,
+#navbar li a {
+    color: var(--text);
+}
+
+#navbar li:hover, 
+#navbar .logout button:hover {
+    color: var(--text);
+    background: var(--secondary);
+}
+
+#navbar ul {
+    display: flex;
+}
+
+#navbar ul li, 
+#navbar .logout button {
+    border-radius: 5px;
+    margin: 0 10px;
+    padding: 10px 16px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--text);
+    transition: 0.2s ease-in;
+    background-color: inherit;
+}
+
+#navbar #hamburger {
+    display: none;
+}
+
+@media screen and (max-width: 1007px) {
+    #links {
+        display: none;
+    }
+
+    #navbar #hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    
+    #navbar #hamburger .line {
+        width: 30px;
+        height: 5px;
+        margin: 3px 0;
+        border-radius: 3px;
+        background-color: var(--text);
+    }
+    
+    #navbar #links.active {
+        display: block;
+        position: absolute;
+        height: 450px;
+        width: 100vw;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: inherit;
+    }
+
+    #navbar #links.active ul {
+        display: block;
+        text-align: center;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+    }
+
+    #navbar #links.active ul li {
+        margin: 50px 0;
+    }
+}
+
+/* footer */
+footer {
+    margin-top: 0px;
+    width: 100%;
+    height: 120px;
+    padding: 50px 0;
+    color: var(--text);
+    background-color: var(--primary);
+}
+
+footer p {
+    text-align: center;
+    font-weight: 300;
+}
+
+/* homepage */
+#main {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    padding: 80px 0;
+    min-height: calc(100vh - 200px);
+}
+
+/* table */
+table {
+    width: 90%;
+    margin: 0 auto;
+    padding: 16px 0;
+    text-align: center;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.06);
+}
+
+th {
+    font-size: 18px;
+}
+
+th, td {
+    padding: 16px 20px;
+}
+
+.todo {
+    width: 70%;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.actions span {
+    color: black;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.delete button,
+.logout button {
+    border: none;
+    background-color: #fff;
+}
+
+/* form */
+.edit-form h1, 
+.login-form h1, 
+.register-form h1, 
+.input-form h1 {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.edit-form, 
+.login-form, 
+.register-form, 
+.input-form {
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px 24px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.06);
+}
+
+.edit-form label, 
+.login-form label, 
+.register-form label, 
+.input-form label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.edit-form input, 
+.login-form input, 
+.register-form input, 
+.input-form input {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #c1c1c1;
+    border-radius: 5px;
+}
+
+.edit-form button, 
+.login-form button, 
+.register-form button, 
+.input-form button {
+    margin-top: 18px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    color: var(--text);
+    background-color: var(--secondary);
+    cursor: pointer;
+}
+
+/* edit */
+#edit-main {
+    padding: 80px 0;
+    min-height: calc(100vh - 200px);
+}
+
+.login-form, 
+.register-form, 
+.edit-form {
+    width: 50%;
+}
+
+/* login */
+#login-main {
+    padding: 80px 0;
+    min-height: calc(100vh - 200px);
+}
+
+.login-form div, 
+.register-form div {
+    margin-bottom: 18px;
+}
+
+.login-form .error, 
+.register-form .error {
+    color: red;
+    font-size: 14px;
+}
+
+/* register */
+#register-main {
+    padding: 80px 0;
+    min-height: calc(100vh - 200px);
+}
